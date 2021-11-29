@@ -36,8 +36,6 @@ body = [{
     'Text': data
 }]
 
-print(url)
-
 # Проверяем, выполнен ли запрос
 try:
     response = requests.post(url, headers=headers, json=body)

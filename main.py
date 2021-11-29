@@ -15,7 +15,6 @@ args = parser.parse_args()
 text = args.file
 toLan = args.lan
 output = args.out
-print(args.file, args.file)
 
 # Проверка на ввод
 if text == 1 or toLan == 1:
@@ -32,11 +31,12 @@ headers = {
     'Ocp-Apim-Subscription-Region': 'westeurope',
     'Content-type': 'application/json'
 }
-
 url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=' + toLan
 body = [{
     'Text': data
 }]
+
+print(url)
 
 # Проверяем, выполнен ли запрос
 try:
@@ -49,7 +49,7 @@ except Exception:
 result = response.json()
 
 # Запись в файл
-f = open(output, 'w')
+f = open(output, 'w', encoding='utf-8')
 f.write(result[0]['translations'][0]['text'])
 f.close()
 

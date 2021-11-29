@@ -15,7 +15,7 @@ args = parser.parse_args()
 text = args.file
 toLan = args.lan
 output = args.out
-
+print(args.file, args.file)
 # Проверка на ввод
 if text == 1 or toLan == 1:
     print("Ошибка! Неверно заданы аргументы!")
